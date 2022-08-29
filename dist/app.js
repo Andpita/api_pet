@@ -18,6 +18,7 @@ var _photo = require('./routes/photo'); var _photo2 = _interopRequireDefault(_ph
 
 const whiteList = [
   "https://react.andpita.site",
+  "http://localhost:3000",
   "http://localhost:3001",
 ];
 

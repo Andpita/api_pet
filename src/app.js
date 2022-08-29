@@ -18,6 +18,7 @@ import photo from './routes/photo';
 
 const whiteList = [
   "https://react.andpita.site",
+  "http://localhost:3000",
   "http://localhost:3001",
 ];
 

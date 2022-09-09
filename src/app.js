@@ -9,6 +9,7 @@ import './database';
 import express from 'express';
 import cors from 'cors';
 import helmet from 'helmet';
+import delay from 'express-delay';
 
 import home from './routes/home';
 import user from './routes/user';
@@ -42,6 +43,7 @@ class App {
   middlewares() {
     this.app.use(cors(corsOptions));
     this.app.use(helmet());
+    this.app.use(delay(2000));
     this.app.use(express.urlencoded({ extended: true }));
     this.app.use(express.json());
     this.app.use('/images/', express.static(resolve(__dirname, '..', 'uploads', 'images')));

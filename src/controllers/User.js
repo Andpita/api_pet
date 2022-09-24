@@ -75,7 +75,9 @@ class UserC {
   //DELETE -> DELETE
   async delete(req, res) {
     try {
-      const user = await User.findByPk(req.userId);
+      const { id } = req.params;
+
+      const user = await User.findByPk(id);
 
       if (!user) {
         return res.status(400).json({

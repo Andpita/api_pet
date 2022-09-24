@@ -49,47 +49,41 @@ class UserC {
     }
   }
 
-  //UPDATE -> ATUALIZAR
+  // Update
   async update(req, res) {
     try {
       const user = await _User2.default.findByPk(req.userId);
 
       if (!user) {
         return res.status(400).json({
-          errors: ['Usuário não existe.'],
+          errors: ['Usuário não existe'],
         });
       }
 
-      const attUser = await user.update(req.body);
-      const { id, nome, email } = attUser;
-
+      const novosDados = await user.update(req.body);
+      const { id, nome, email } = novosDados;
       return res.json({ id, nome, email });
     } catch (e) {
-      console.log(e);
       return res.status(400).json({
         errors: e.errors.map((err) => err.message),
       });
     }
   }
 
-  //DELETE -> DELETE
+  // Delete
   async delete(req, res) {
     try {
-      const { id } = req.params;
-
-      const user = await _User2.default.findByPk(id);
+      const user = await _User2.default.findByPk(req.userId);
 
       if (!user) {
         return res.status(400).json({
-          errors: ['Usuário não existe.'],
+          errors: ['Usuário não existe'],
         });
       }
 
       await user.destroy();
-
-      return res.json({ Info: 'Usuário deletado!' });
+      return res.json(null);
     } catch (e) {
-      console.log(e);
       return res.status(400).json({
         errors: e.errors.map((err) => err.message),
       });

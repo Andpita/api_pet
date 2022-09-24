@@ -10,7 +10,7 @@ router.get('/', _User2.default.index); //< Mostra todos usuários
 router.get('/:id', _User2.default.show); //< Mostra apenas um usuaŕio logado, não um especfico
 
 router.post('/', _User2.default.store);
-router.put('/', _User2.default.update);
+router.put('/:id', _User2.default.update);
 router.delete('/:id', _User2.default.delete);
 
 exports. default = router;

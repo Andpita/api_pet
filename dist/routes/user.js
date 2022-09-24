@@ -7,9 +7,9 @@ const router = new (0, _express.Router)();
 
 //Rotas apenas demonstrativas:
 router.get('/', _User2.default.index); //< Mostra todos usuários
-// router.get('/:id', user.show); //< Mostra apenas um usuaŕio logado, não um especfico
+router.get('/:id', _User2.default.show); //< Mostra apenas um usuaŕio logado, não um especfico
 
-router.post('/:id', _User2.default.store);
+router.post('/', _User2.default.store);
 router.put('/:id', _loginRequired2.default, _User2.default.update);
 router.delete('/:id', _loginRequired2.default, _User2.default.delete);
 

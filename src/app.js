@@ -18,7 +18,8 @@ import aluno from './routes/aluno';
 import photo from './routes/photo';
 
 const whiteList = [
-  "https://react.andpita.site",
+  "https://pets.andpita.online",
+  "https://api-pets.andpita.online",
   "http://localhost:3000",
   "http://localhost:3001",
 ];

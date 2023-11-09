@@ -18,7 +18,8 @@ var _aluno = require('./routes/aluno'); var _aluno2 = _interopRequireDefault(_al
 var _photo = require('./routes/photo'); var _photo2 = _interopRequireDefault(_photo);
 
 const whiteList = [
-  "https://react.andpita.site",
+  "https://pets.andpita.online",
+  "https://api-pets.andpita.online",
   "http://localhost:3000",
   "http://localhost:3001",
 ];

@@ -3,11 +3,11 @@ import User from "../models/User";
 
 class Token {
   async store(req, res) {
-    const { email = '', password = '' } = req.body;
+    const { email = "", password = "" } = req.body;
 
     if (!email || !password) {
       return res.status(401).json({
-        errors: ['Credenciais Inválidas'],
+        errors: ["Credenciais Inválidas"],
       });
     }
 
@@ -15,13 +15,13 @@ class Token {
 
     if (!user) {
       return res.status(401).json({
-        errors: ['Usuário não existe'],
+        errors: ["Usuário não existe"],
       });
     }
 
     if (!(await user.checkPassword(password))) {
       return res.status(401).json({
-        errors: ['Senha inválida'],
+        errors: ["Senha inválida"],
       });
     }
 
